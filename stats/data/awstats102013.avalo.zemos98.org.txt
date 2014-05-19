@@ -1,0 +1,453 @@
+AWSTATS DATA FILE 7.0 (build 1.971)
+# If you remove this file, all statistics for date 201310 will be lost/reset.
+# Last config file used to build this data file was /etc/awstats/awstats.avalo.zemos98.org.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 27
+POS_GENERAL 1997                
+POS_TIME 2661                
+POS_VISITOR 8862                
+POS_DAY 12009               
+POS_DOMAIN 3419                
+POS_LOGIN 3806                
+POS_ROBOT 3961                
+POS_WORMS 4620                
+POS_EMAILSENDER 4751                
+POS_EMAILRECEIVER 4894                
+POS_SESSION 12727               
+POS_SIDER 12874               
+POS_FILETYPES 5029                
+POS_DOWNLOADS 5204                
+POS_OS 5252                
+POS_BROWSER 5426                
+POS_SCREENSIZE 5895                
+POS_UNKNOWNREFERER 5969                
+POS_UNKNOWNREFERERBROWSER 6476                
+POS_ORIGIN 6819                
+POS_SEREFERRALS 6955                
+POS_PAGEREFS 7110                
+POS_SEARCHWORDS 7975                
+POS_KEYWORDS 8141                
+POS_MISC 2324                
+POS_ERRORS 8216                
+POS_CLUSTER 3662                
+POS_SIDER_404 8330                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20131101025543 23 4981 10820573927620
+FirstTime 0
+LastTime 20131030161728
+LastUpdate 20131101060002 1 0 0 0 0
+TotalVisits 49                  
+TotalUnique 42                  
+MonthHostsKnown 0                   
+MonthHostsUnknown 98                  
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+JavascriptDisabled 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 18 0
+RealPlayerSupport 0 0 0
+TotalMisc 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 1 36 5049184 18 35 610828
+1 2 6 71636 4 20 100525
+2 0 5 166725 0 11 123031
+3 5 35 5128397 8 25 345769
+4 2 2 51788 10 23 496402
+5 1 1 25937 4 13 252751
+6 0 0 0 7 22 203467
+7 0 1 153394 4 15 53746
+8 1 2 179288 3 10 26703
+9 6 47 5347717 4 10 28597
+10 2 17 825632 5 31 409272
+11 4 42 5142156 8 23 186302
+12 2 45 5416553 2 17 12606
+13 3 49 5155958 5 24 83525
+14 2 10 794035 4 15 115184
+15 0 4 19848 8 20 157705
+16 2 14 111332 6 17 144925
+17 3 64 10216271 12 40 500218
+18 1 31 5161041 9 24 106704
+19 0 36 158784 1 11 157952
+20 3 41 5116262 11 26 212621
+21 5 99 15139914 6 45 1765681
+22 1 14 87819 4 11 78448
+23 3 27 196770 8 23 223066
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 12
+es 14 496 56217171
+cn 10 10 259069
+us 10 57 7321809
+de 8 8 207152
+jp 6 6 155364
+gb 1 29 5011826
+ca 0 3 17510
+ar 0 3 447148
+mx 0 4 19848
+ad 0 4 19848
+pe 0 4 19848
+co 0 4 19848
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 14
+yandex 168 1320637 20131031145148 0
+googlebot 50 1053657 20131031174238 0
+baiduspider 34 644065 20131031055326 0
+robot 11 319921 20131023035908 0
+bot[\s_+:,\.\;\/\\-] 9 233089 20131023152630 0
+crawl 8 207195 20131028044505 0
+seznambot 7 129599 20131026073244 0
+no_user_agent 4 216565 20131020064353 0
+[\s_+:,\.\;\/\\-]bot 4 103576 20131024012853 0
+mj12bot 2 51831 20131019055155 0
+ia_archiver 1 25894 20131002155345 0
+mail\.ru 1 25894 20131030133800 0
+msnbot\-media 1 146877 20131031053508 0
+netcraft 1 25894 20131011221841 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 6
+css 14 427826 0 0
+php 46 1191124 0 0
+png 430 65334864 0 0
+html 3 77811 0 0
+js 70 2172576 0 0
+gif 65 512240 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 0
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS 13
+linuxandroid 4
+winlong 16
+winxp 62
+unix 4
+java 3
+linuxubuntu 29
+linux 37
+winvista 24
+win7 231
+macosx 195
+win95 1
+win2003 7
+Unknown 15
+END_OS
+
+# Browser ID - Hits
+BEGIN_BROWSER 27
+safari7.0 9
+firefox10.0.12 29
+msie6.0 7
+firefox3.6 11
+chrome29.0.1547.76 35
+android 3
+chrome28.0.1500.71 29
+chrome30.0.1599.69 187
+firefox12.0 2
+firefox24.0 96
+opera9.80 4
+msie8.0 22
+safari6.0.5 4
+firefox6.0.2 3
+mozilla 11
+chrome24.0.1312.57 29
+msie7.0 12
+firefox16.0 5
+msie10.0 12
+firefox6.0 1
+chrome30.0.1599.82 1
+firefox3.6.12 1
+chrome30.0.1599.66 1
+msie9.0 12
+chrome29.0.1547.74 4
+chrome30.0.1599.101 90
+Unknown 8
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 6
+Mozilla/5.0_(compatible;_Embedly/0.2;_snap;__http://support.embed.ly/) 20131029143240
+MacInroy_Privacy_Auditors._See_avalo.zemos98.org's_privacy_violation_report:_http://avalo.zemos98.org.macinroy.com/avalo.zemos98.org 20131010170422
+Embedly__support@embed.ly 20131029143248
+bitlybot 20131011105140
+Mozilla/4.0_(compatible;) 20131017100453
+Mozilla/5.0_(compatible;_Embedly/0.2;__http://support.embed.ly/) 20131029143239
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 4
+MacInroy_Privacy_Auditors._See_avalo.zemos98.org's_privacy_violation_report:_http://avalo.zemos98.org.macinroy.com/avalo.zemos98.org 20131010170422
+Embedly__support@embed.ly 20131029143248
+bitlybot 20131011105140
+Apache-HttpClient/4.3_(java_1.5) 20131018141859
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 37 64
+From1 0 0
+From2 5 6
+From3 7 189
+From4 0 369
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 1
+google 5 6
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 11
+http://avalo.zemo.macinroy.com/avalo.zemos98.org 3 3
+http://teclista.tumblr.com/tagged/yo/page/3 1 1
+http://deestranjis.es 1 1
+https://www.facebook.com 1 1
+http://urbanohumano.org/social-innovation/id-en-practicas-colaborativas-del-prototipado-a-un-modelo-sostenible/ 1 1
+http://avalozemos98.tumblr.com/post/32661946416/como-es-el-procedimiento-para-avalaros 0 4
+http://avalozemos98.tumblr.com 0 16
+http://benditascalles.tumblr.com 0 4
+http://avalozemos98.tumblr.com/post/32662042274/que-es-un-aval-mancomunado 0 140
+http://avalozemos98.tumblr.com/post/32661722876/que-criterios-eticos-y-solidarios-se-aplican-para 0 4
+http://avalozemos98.tumblr.com/post/32383393116/por-que-solicitaremos-un-prestamo-en-coop57 0 14
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 1
+avalo+zemos 1
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 2
+avalo 1
+zemos 1
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 3
+403 1 389
+206 27 1806926
+404 164 63319
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referer
+BEGIN_SIDER_404 6
+/images/layout/logo-black.jpg 4 -
+/robots.txt 135 http://avalo.zemos98.org/
+/favicon.png 2 -
+/javascripts/jquery-1.7.2.min.js 20 http://avalo.zemos98.org/
+/favicon.gif 2 -
+/lrx4ajruz61ki0qq.html 1 http://avalo.zemos98.org/
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 98
+119.63.193.194 3 3 77682 20131011032348
+5.9.113.2 3 3 77682 20131018141859
+85.25.134.59 3 3 77682 20131010170422
+217.216.89.137 2 2 51788 20131011115150
+211.151.172.9 1 1 25894 20131030161728
+66.135.48.204 1 29 5011826 20131001182314
+202.46.54.35 1 1 25894 20131003092015
+85.136.71.244 1 31 5024778 20131009213333
+54.221.199.147 1 2 179288 20131029143239
+23.20.161.232 1 1 25894 20131021105321
+87.221.196.94 0 4 19848 
+83.56.225.56 0 4 19848 
+87.216.163.168 0 4 19848 
+190.210.186.6 0 3 447148 
+195.235.163.161 0 4 19848 
+80.38.61.59 0 4 19848 
+83.43.62.208 0 4 19848 
+54.224.110.235 0 1 121499 
+142.129.213.152 0 3 17510 
+201.240.212.47 0 4 19848 
+88.22.247.199 0 4 19848 
+217.148.68.113 0 8 39696 
+85.62.234.161 0 4 19848 
+81.45.55.36 0 4 19848 
+217.216.1.98 1 29 5011826 20131020213159
+54.224.46.59 0 1 160838 
+88.0.165.204 0 4 19848 
+202.46.58.36 1 1 25894 20131014233001
+91.187.92.112 0 4 19848 
+90.164.230.155 0 4 19848 
+54.235.15.201 1 1 25894 20131025204338
+83.57.6.150 0 4 19848 
+85.49.173.229 0 8 39696 
+119.63.193.195 1 1 25894 20131009092710
+180.76.5.162 1 1 25937 20131003052625
+54.211.18.135 0 1 8099 
+79.146.200.87 0 4 19848 
+81.35.193.211 0 4 19848 
+202.46.61.35 1 1 25894 20131011032220
+2.139.93.161 0 4 19848 
+90.165.152.11 0 4 19848 
+87.220.190.9 1 29 5011826 20131016174615
+77.229.208.27 0 4 19848 
+176.9.136.58 1 1 25894 20131019041621
+84.79.154.183 1 29 5011826 20131017092930
+54.221.57.190 0 1 138883 
+194.179.104.121 0 4 19848 
+202.46.63.90 1 1 25894 20131009092534
+54.226.41.157 0 1 8099 
+72.52.194.96 0 4 600542 
+187.252.128.175 0 4 19848 
+202.46.52.26 1 1 25894 20131008132510
+81.90.111.11 0 4 19848 
+80.39.209.156 0 4 19848 
+207.172.209.16 1 1 25894 20131025030704
+54.224.5.73 1 1 25894 20131023113222
+83.36.29.173 0 1 2338 
+79.144.123.139 0 4 19848 
+31.4.188.73 0 1 2338 
+54.227.49.251 1 1 25894 20131011105140
+180.76.6.225 1 1 25937 20131011221328
+119.63.193.132 1 1 25894 20131023212756
+95.18.122.15 1 29 5011826 20131019172350
+54.226.107.132 0 1 146877 
+54.224.189.70 1 1 25894 20131028205705
+80.25.28.210 1 31 5024778 20131016205404
+195.53.125.134 0 4 19848 
+77.230.224.231 0 8 19848 
+54.221.198.105 0 1 8099 
+180.76.5.197 1 1 25937 20131024031843
+85.115.60.180 1 29 5011826 20131022123305
+144.76.113.22 1 1 25894 20131001232655
+54.204.20.250 0 1 146877 
+77.225.224.20 1 29 5011826 20131016211011
+119.63.193.196 1 1 25894 20131014232345
+81.33.217.108 0 4 19848 
+188.78.70.36 0 4 19848 
+188.78.206.92 1 31 5024778 20131007030232
+87.216.161.251 1 31 5024778 20131009130515
+88.11.93.3 0 4 19848 
+89.130.133.12 0 4 19848 
+161.111.249.138 1 31 5024778 20131002115044
+91.126.183.130 0 4 19848 
+212.225.237.119 1 29 5011826 20131018002543
+81.39.114.158 0 4 19848 
+80.31.40.28 0 4 19848 
+194.224.196.203 0 4 19848 
+54.204.20.249 0 2 143441 
+212.230.46.77 0 4 19848 
+186.147.181.70 0 4 19848 
+66.249.83.97 1 1 25894 20131022160316
+199.30.80.103 1 1 25894 20131021113352
+184.73.105.192 0 3 286895 
+80.36.122.88 1 7 211637 20131014120317
+2.136.145.192 0 4 19848 
+83.138.235.197 0 4 19848 
+202.46.55.34 1 1 25894 20131023212739
+50.17.156.96 0 1 153394 
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 29
+20131001 2 38 5077416 2
+20131002 2 32 5050672 2
+20131003 3 16 290663 3
+20131004 1 11 365861 1
+20131005 0 4 19848 0
+20131007 1 35 5044626 1
+20131008 3 20 303951 3
+20131009 4 64 10101344 4
+20131010 1 1 25894 1
+20131011 5 13 169209 5
+20131012 1 5 45742 1
+20131013 0 4 19848 0
+20131014 4 14 309167 4
+20131015 0 9 42034 0
+20131016 3 89 15048430 3
+20131017 1 37 5051522 1
+20131018 2 34 5057568 2
+20131019 2 30 5037720 2
+20131020 1 37 5051522 1
+20131021 2 13 805784 2
+20131022 2 46 5097264 2
+20131023 3 19 157074 3
+20131024 1 14 87819 1
+20131025 2 2 51788 2
+20131027 0 5 166725 0
+20131028 1 1 25894 1
+20131029 1 14 934866 1
+20131030 1 8 63252 1
+20131031 0 13 212938 0
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 1
+0s-30s 49
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 2
+/ 46 1191124 46 46
+/index-en.html 3 77811 3 3
+END_SIDER

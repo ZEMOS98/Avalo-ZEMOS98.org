@@ -1,0 +1,540 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class=" js no-flexbox flexbox-legacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="title" content="#avaloZEMOS98">
+    <meta name="description" content="Vamos a solicitar un préstamo de 98.000€ a COOP57 (Servicios Financieros Éticos y Solidarios), entidad de la que somos socias.">
+    <title>#avaloZEMOS98</title>
+ 
+    <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <meta property="og:title" content="#avaloZEMOS98">
+    <meta property="og:description" content="Vamos a solicitar un préstamo de 98.000€ a COOP57 (Servicios Financieros Éticos y Solidarios), entidad de la que somos socias.">
+    <meta property="og:url" content="http://avalo.zemos98.org/">
+    <meta property="og:image" content="images/layout/logo-black.jpg">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="images/favicon/favicon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/favicon72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/favicon114.png">
+
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> -->
+    <script src="javascripts/ga.js" async="" type="text/javascript"></script><script>window.jQuery || document.write('<script src="/javascripts/jquery-1.7.2.min.js">\x3C/script>')</script><script src="javascripts/jquery.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <link rel="stylesheet" href="stylesheets/main.css" media="all">
+    <script type="text/javascript" src="javascripts/init.js"></script>
+
+    <!-- NECESARIO PARA EXTRAER DATOS DE HOJA DE CALCULO DE GOOGLE DOCS -->
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+    	
+    	//CONVIERTE LA CIFRA EXTRAIDA A FORMATO MONETARIO €
+    	Number.prototype.formatMoney = function(c, d, t){
+			var n = this, c = isNaN(c = Math.abs(c)) ? 2 : c, d = d == undefined ? "," : d, t = t == undefined ? "." : t, s = n < 0 ? "-" : "", i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", j = (j = i.length) > 3 ? j % 3 : 0;
+   			return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "") + " €";
+		};
+		
+		Number.prototype.formatNumber = function(c, d, t){
+			var n = this, c = isNaN(c = Math.abs(c)) ? 2 : c, d = d == undefined ? "," : d, t = t == undefined ? "." : t, s = n < 0 ? "-" : "", i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", j = (j = i.length) > 3 ? j % 3 : 0;
+   			return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+		};
+    	//HASTA AQUÍ
+    	
+    	google.load('visualization', '1');
+		google.setOnLoadCallback(drawVisualization);
+		
+		function drawVisualization() {			
+			
+			//CARGA EL DATOS DEL NÚMERO DE COFINANCIADORES
+			var cofinanciadores = new google.visualization.Query('https://docs.google.com/spreadsheet/tq?range=A2&key=0Amqw1zYtWkiSdDYwcFFXOVU3RjRDbXFDeDVkQXlJakE&headers=-1');
+			cofinanciadores.send(handleQueryResponse1);
+			//HASTA AQUÍ
+			
+			//CARGA EL DATOS DEL TOTAL FINANCIADO
+			var total = new google.visualization.Query('https://docs.google.com/spreadsheet/tq?range=B2&key=0Amqw1zYtWkiSdDYwcFFXOVU3RjRDbXFDeDVkQXlJakE&headers=-1');
+			total.send(handleQueryResponse2);
+			//HASTA AQUÍ
+			
+			//CARGA EL DATOS DEL PORCENTAJE FINANCIADO
+			var total = new google.visualization.Query('https://docs.google.com/spreadsheet/tq?range=D2&key=0Amqw1zYtWkiSdDYwcFFXOVU3RjRDbXFDeDVkQXlJakE&headers=-1');
+			total.send(handleQueryResponse3);
+			//HASTA AQUÍ
+		}
+		
+		function handleQueryResponse1(response) {		
+			var data = response.getDataTable();
+			var element = document.getElementById('cofinanciadores');
+			element.innerHTML = data.getValue(0, 0);
+			wrap.draw();
+		}
+		
+		function handleQueryResponse2(response) {		
+			var data = response.getDataTable();
+			var element = document.getElementById('total');
+			element.innerHTML = data.getValue(0, 0).formatMoney(2, ',', '.');
+			wrap.draw();
+		}
+		
+		function handleQueryResponse3(response) {		
+			var data = response.getDataTable();
+			var element = document.getElementById('porcentaje');
+			element.innerHTML = data.getValue(0, 0).formatNumber(2,',', '.') + " %";
+			wrap.draw();
+		}
+    </script>
+    <!-- HASTA AQUÍ -->
+    
+    <!-- GOOGLE ANALYTICS -->
+    <script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-35212770-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+	<!-- FIN GOOGLE ANALYTICS -->
+    
+    
+    
+    </head>
+
+    <body class="es">
+		
+        <ul class="menu-idioma">
+            <li class="active"><a href="http://avalo.zemos98.org">Español</a></li>
+            <li><a href="http://avalo.zemos98.org/index-en.html">English</a></li>
+        </ul>
+
+        <div id="container">
+      		
+            <div class="page_home" id="top">
+
+				<section class="intro_text">
+    	        	<div class="sec_content">
+	                	<div class="logos">
+		                	<img src="images/logo_zemos98.png" title="ZEMOS98" alt="ZEMOS98" class="logo-zemos98" />
+		                	<a href="http://www.coop57.coop/andalucia/index.php" title="COOP57" target="_blank"><img src="images/logo_coop57.gif" title="COOP57" alt="COOP57" class="logo-coop57" /></a>
+						</div>
+    					<div class="intro">
+                            <p>
+								Vamos a solicitar un préstamo de 98.000 € a <a href="http://www.coop57.coop" title="COOP57" target="_blank">COOP57 (Servicios Financieros Éticos y Solidarios)</a>, entidad de la que somos socias. Para ello necesitamos avalar una gran parte o la totalidad de la cantidad solicitada y nos hemos dado de plazo 40 días. Y por eso te necesitamos.
+							</p>
+							<p>
+								Hacemos esto para iniciar un proceso de independencia con respecto a la banca tradicional, para desprecarizar los proyectos en los que estamos inmersos, para afianzar los lazos de confianza con nuestra comunidad y para promover una economía social y solidaria. 
+							</p>
+							<div class="more">
+								<a href="http://avalozemos98.tumblr.com/post/32383393116/solicitaremos-un-prestamos-de-coop57-para" class="button small" title="Lee la versión extendida">Lee la versión extendida</a>                          	
+                         	</div>
+                        </div>
+                	</div>
+
+        		</section>
+    
+    			<div id="mainmenu_wrap">
+          			
+                    <section id="mainmenu">
+        				<div class="sec_content">
+              				<div class="navegacion">
+                                <nav id="pages">
+                                    <ul>
+                                        <li class="scroll-proyectos">Proyectos</li>
+                                    </ul>
+                                </nav>
+                                <nav id="jobs">
+                                    <ul>
+                                        <li><a class="scroll" href="#zemos98">Festival ZEMOS98</a></li>
+                                        <li><a class="scroll" href="#98lab">98Lab</a></li>
+                                        <li><a class="scroll" href="#europe">Remapping Europe</a> </li>
+                                        <li><a class="scroll" href="#recordartv">Recordar TV</a> </li>
+                                        <li><a class="scroll" href="#publicaciones">Publicaciones</a></li>
+                                    </ul>
+                                </nav>
+							</div>
+                            <div class="apoyos">
+	                            <div id="datosApoyos">
+                                    <div class="dato"><span id="cofinanciadores"></span> avalistas</div>
+                                    <div class="dato"><span id="total"></span> avalados</div>
+                                    <div class="dato"><span id="porcentaje"></span> del total avalado</div>
+									<div class="dato">
+										<span style="color: #FFF;">El plazo ha finalizado</span>
+										<!--
+										<script type="text/javascript">
+                                        
+                                        today = new Date();
+                                        
+                                        BigDay = new Date("November 10, 2012");
+                                        msPerDay = 24 * 60 * 60 * 1000 ;
+                                        timeLeft = (BigDay.getTime() - today.getTime());
+                                        e_daysLeft = timeLeft / msPerDay;
+                                        daysLeft = Math.floor(e_daysLeft);
+                                        e_hrsLeft = (e_daysLeft - daysLeft)*24;
+                                        hrsLeft = Math.floor(e_hrsLeft);
+                                        minsLeft = Math.floor((e_hrsLeft - hrsLeft)*60);
+                                        document.write("Quedan <span>" + daysLeft + "</span> días y <span>" + hrsLeft +"</span> horas");
+                                        
+                                        </script>
+                                        -->
+                                 	</div>								
+                               	</div>
+                                <!--
+								<a href="#formulario-avalar" class="enlace-formulario scroll" title="Quiero avalar"><img src="images/enlace_formulario.gif" /></a>
+								-->
+                            </div>
+
+            			</div>
+
+      				</section>
+          			<!-- /.mainmenu --> 
+        		
+                </div>
+				<!-- #mainmenu_wrap	-->
+      			
+				<!-- AVALISTA 1 -->
+                
+				<section class="sec_albero fixbg bravo">
+          			<div class="sec_content inner_fixbg">
+        				<blockquote>
+              				<h1>-</h1>
+              				<div class="author">-</div>
+            			</blockquote>
+      				</div>
+        		</section>
+                
+                <!-- PROYECTO 1 -->
+                
+				<section class="job_vacant naranja" id="zemos98">
+          			<div class="sec_content">
+        				<article class="job">
+              				<h1>
+                            	<span>Festival ZEMOS98</span>
+                            </h1>
+              				<div class="content">
+								<div class="izquierda">
+                                    <div class="text">
+                                        Un evento anual que se celebra en Sevilla y que con el paso de los años ha conformado un corpus teórico, práctico, político y vital. La remezcla, copylove, educación expandida forman parte de este cuerpo. El Festival ZEMOS98 ha pasado de ser un festival de cortos en sus orígenes a ser un encuentro que recoge conversaciones que se están produciendo en ciertos sectores de la sociedad preocupados de repensar la cultura, la política, las relaciones sociales. En este sentido, formamos parte de un debate más amplio, que no nos pertenece. El Festival sirve de herramienta para amplificar, problematizar y redistribuir  estas cuestiones para que lleguen a más personas. Si tuviéramos que acotar qué tipo de festival somos, nuestra columna vertebral estaría a medio camino entre la cultura libre y el pensamiento crítico y nuestras extremidades lo audiovisual, lo educativo, lo digital...                                
+                                    </div>
+                                    <div class="more">
+                                        <a href="http://festival.zemos98.org" class="button verde" target="_blank">festival.zemos98.org</a>
+                                    </div>
+								</div>
+    							<img src="images/proyectos/proyectos_festival.png" class="foto-proyecto" />
+          					</div>
+              				<!-- /.content -->
+            			</article>
+      				</div>
+        		</section>
+
+				<!-- AVALISTA 2 -->
+
+				<section class="sec_azul fixbg platoniq">
+          			<div class="sec_content inner_fixbg">
+        				<blockquote>
+              				<h1>-</h1>
+              				<div class="author">-</div>
+            			</blockquote>
+      				</div>
+        		</section>
+                
+                <!-- VALOR 1 -->
+
+				<section class="job_vacant valor albero" id="pensamiento">
+          			<div class="sec_content">
+        				<article class="job">
+              				<h1>
+                            	<span>Generamos<br /> pensamiento crítico.</span>
+                            </h1>
+            			</article>
+      				</div>
+        		</section>
+                
+				<!-- AVALISTA 3 -->
+
+				<section class="sec_albero fixbg juanlu">
+          			<div class="sec_content inner_fixbg">
+        				<blockquote>
+              				<h1>-</h1>
+              				<div class="author">-</div>
+            			</blockquote>
+      				</div>
+        		</section>
+
+                <!-- PROYECTO 2 -->
+
+				<section class="job_vacant albero" id="98lab">
+          			<div class="sec_content">
+        				<article class="job">
+              				<h1>
+                            	<span>98Lab</span>
+                            </h1>
+              				<div class="content">
+								<div class="izquierda">
+                                    <div class="text">
+                                        98lab es un laboratorio abierto y situado que funciona como un espacio de investigación, reflexión y producción de creación cultural y nuevos medios. Una oportunidad de generar un itinerario formativo al margen de la educación formal centrándose en temas y prácticas que van desde la cultura digital y audiovisual, a los feminismos o a modelos de participación ciudadana, con el objetivo de fomentar el pensamiento crítico. 98lab es, además, un contenedor de actividades formativas, talleres, microtalleres, presentaciones, residencias, que ZEMOS98 gestiona y produce.                               	
+                                    </div>
+	            					<div class="more">
+    	                            	<a href="http://www.98lab.cc" class="button albero" target="_blank">98lab.cc</a>
+        	                        </div>
+								</div>
+            					<img src="images/proyectos/proyectos_98lab.png" class="foto-proyecto" />
+          					</div>
+              				<!-- /.content -->
+            			</article>
+      				</div>
+        		</section>
+
+				<!-- AVALISTA 4 -->
+            
+            	<section class="sec_verde fixbg ptqk">
+          			<div class="sec_content inner_fixbg">
+        				<blockquote>
+              				<h1>-</h1>
+              				<div class="author">-</div>
+            			</blockquote>
+      				</div>
+        		</section>
+
+                <!-- VALOR 2 -->
+
+				<section class="job_vacant valor albero" id="deconstruccion">
+          			<div class="sec_content">
+        				<article class="job">
+              				<h1>
+                            	<span>Deconstruimos los mensajes dominantes.</span>
+                            </h1>
+            			</article>
+      				</div>
+        		</section>
+
+				<!-- AVALISTA 5 -->
+            
+            	<section class="sec_azul fixbg diagonal">
+                    <div class="sec_content inner_fixbg">
+        				<blockquote>
+              				<h1>-</h1>
+              				<div class="author">-</div>
+            			</blockquote>
+      				</div>
+        		</section>
+
+                <!-- PROYECTO 3 -->
+
+				<section class="job_vacant albero" id="europe">
+          			<div class="sec_content">
+        				<article class="job">
+              				<h1>
+                            	<span>Remapping Europe</span>
+                            </h1>
+              				<div class="content">
+                            	<div class="izquierda">
+                                    <div class="text">
+                                        Un proyecto para reimaginar nuestra identidad, remapear nuestro imaginario, generar relatos transfronterizos. Un proyecto en el que reflexionar sobre la noción de identidad, de cuerpo, de frontera, de Europa y de migración. Una de las primeras actividades que se ponen en marcha es "European Souvenirs" un espectáculo de live cinema a partir de las memorias personales y colectivas de archivos audiovisuales de Europa.
+                                    </div>
+                                    <div class="more">
+                                        <a href="http://www.europeansouvenirs.eu" class="button albero" target="_blank">europeansouvenirs.eu</a>
+                                    </div>
+                              	</div>
+                               	<img src="images/proyectos/proyectos_european.png" class="foto-proyecto" />
+          					</div>
+              				<!-- /.content -->
+            			</article>
+      				</div>
+        		</section>
+
+				<!-- AVALISTA 6 -->
+
+				<section class="sec_verde fixbg vivian">
+		        	<div class="sec_content inner_fixbg">
+        				<blockquote>
+              				<h1>-</h1>
+              				<div class="author">-</div>
+            			</blockquote>
+      				</div>
+        		</section>
+
+                <!-- VALOR 3 -->
+
+				<section class="job_vacant valor albero" id="redes">
+          			<div class="sec_content">
+        				<article class="job">
+              				<h1>
+                            	<span>Tejemos redes, relaciones y comunidades.</span>
+                            </h1>
+            			</article>
+      				</div>
+        		</section>
+
+				<!-- AVALISTA 7 -->
+
+				<section class="sec_verde fixbg traficantes">
+		        	<div class="sec_content inner_fixbg">
+        				<blockquote>
+              				<h1>-</h1>
+              				<div class="author">-</div>
+            			</blockquote>
+      				</div>
+        		</section>
+
+                <!-- PROYECTO 4 -->
+
+				<section class="job_vacant albero" id="recordartv">
+          			<div class="sec_content">
+        				<article class="job">
+              				<h1>
+                            	<span>Recordar TV</span>
+                            </h1>
+              				<div class="content">
+                            	<div class="izquierda">
+                                    <div class="text">
+                                        Recordar TV fue una televisión por internet construida desde la perspectiva de las personas mayores. Una herramienta con que dotar, no sólo de capacidades tecnológicas a un colectivo desposeído de este privilegio, sino además dar proyección a sus historias, a su memoria y a su manera de entender el presente.                                 	
+                                    </div>
+	                                <div class="more">
+                                        <a href="http://blogs.zemos98.org/recordartv/" class="button albero" target="_blank">blogs.zemos98.org/recordartv</a>
+                                    </div>
+                               	</div>
+    							<img src="images/proyectos/proyectos_recordartv.png" class="foto-proyecto" />
+          					</div>
+              				<!-- /.content -->
+            			</article>
+      				</div>
+        		</section>
+
+				<!-- AVALISTA 8 -->
+
+                <section class="sec_azul fixbg amaste">
+          			<div class="sec_content inner_fixbg">
+        				<blockquote>
+		              		<h1>-</h1>
+              				<div class="author">-</div>
+            			</blockquote>
+      				</div>
+        		</section>
+
+                <!-- VALOR 4 -->
+
+				<section class="job_vacant valor lineas5 albero" id="margenes">
+          			<div class="sec_content">
+        				<article class="job">
+              				<h1>
+                            	<span>Trabajamos en las intersecciones, lo micro, los márgenes. Nos preocupa lo local, miramos más allá de las fronteras.</span>
+                            </h1>
+            			</article>
+      				</div>
+        		</section>
+
+				<!-- AVALISTA 9 -->
+
+                <section class="sec_albero fixbg zzzinc">
+          			<div class="sec_content inner_fixbg">
+        				<blockquote>
+		              		<h1>-</h1>
+              				<div class="author">-</div>
+            			</blockquote>
+      				</div>
+        		</section>
+
+                <!-- PROYECTO 5 -->
+
+				<section class="job_vacant albero" id="publicaciones">
+          			<div class="sec_content">
+        				<article class="job">
+              				<h1>
+                            	<span>Publicaciones</span>
+                            </h1>
+              				<div class="content">
+                            	<div class="izquierda">
+                                    <div class="text">
+                                        Siempre hemos entendido nuestras publicaciones como una manera de expandir los procesos de investigación/acción/participación que han tenido lugar en el marco del Festival ZEMOS98. Nos gustaría destacar en este sentido la narración colectiva "Código Fuente: La Remezcla", un libro que resume un viaje en el tiempo a través de conceptos como memoria, archivo, remezcla, palimpsesto, cultura digital, ciencia ficción, vanguardias artísticas, etc. ¿Puede ser un libro un software re-programable? ¿Puede contarse una historia y conceder al lector el código fuente para que este la remezcle?                               	
+                                    </div>
+                                    <div class="more">
+                                        <a href="http://publicaciones.zemos98.org/libro-codigo-fuente-la-remezcla" class="button albero" target="_blank">Código Fuente: la remezcla</a>
+                                    </div>
+                                </div>
+								<img src="images/proyectos/proyectos_publicaciones.png" class="foto-proyecto" />
+          					</div>
+              				<!-- /.content -->
+            			</article>
+      				</div>
+        		</section>
+
+				<!-- AVALISTA 10 -->
+
+                <section class="sec_verde fixbg lainvisible">
+          			<div class="sec_content inner_fixbg">
+        				<blockquote>
+		              		<h1>-</h1>
+              				<div class="author">-</div>
+            			</blockquote>
+      				</div>
+        		</section>
+
+                <!-- VALOR 5 -->
+
+				<section class="job_vacant valor lineas4 albero" id="remezcla">
+          			<div class="sec_content">
+        				<article class="job">
+              				<h1>
+                            	<span>Facilitamos, compartimos e invitamos a reutilizar, replicar y remezclar todo nuestro contenido.</span>
+                            </h1>
+            			</article>
+      				</div>
+        		</section>
+    
+				<section class="sec_naranja fixbg zemos98">
+          			<div class="sec_content inner_fixbg">
+        				<blockquote>
+              				<h1>-</h1>
+              				<div class="author">-</div>
+            			</blockquote>
+     				</div>
+        		</section>
+				
+                <!--
+                <section class="haz_que_se_quede" id="formulario-avalar">
+          			<div class="sec_content">
+				        <article>
+							<iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dGpuelRkemlLbjFUdE4tOXM5c3FNcWc6MQ" width="942" height="1950" frameborder="0" marginheight="0" marginwidth="0">Cargando...</iframe>             			
+                        </article>
+      				</div>
+        		</section>
+                -->
+
+			</div>
+      		<!-- /.page_home -->
+      
+      		<footer id="footer">
+    			<div id="footer_content">
+                    <div id="footer_links">
+                        <span class="creditos">
+                            Diseño basado en <a href="http://www.notevayasaalemania.com" target="_blank" title="No te vayas a Alemania">notevayasaalemania.com</a> desarrollada por <a href="http://www.wattio.com" target="_blank" title="Wattio">Wattio</a>.
+                        </span>
+                    	<ul>
+                        	<li>
+		                    	<a href="http://avalozemos98.tumblr.com" title="Sigue la campaña #avaloZEMOS98">Sigue la campaña #avaloZEMOS98</a>
+							</li>
+                        	<li>
+		                    	<a href="http://avalozemos98.tumblr.com/tagged/avalistas" title="Avalistas">Avalistas</a>
+							</li>
+                        	<li>
+		                    	<a href="http://avalozemos98.tumblr.com/tagged/faq" title="FAQ">FAQ</a>
+							</li>
+                        	<li>
+		                    	<a href="mailto:info@zemos98.org" title="info@zemos98.org">info@zemos98.org</a>
+							</li>
+						</ul>
+      				</div>
+        		</div>
+  			</footer>
+      		<!-- /.footer --> 
+      
+    	</div>
+		<!-- /#container -->
+	
+    </body>
+</html>
