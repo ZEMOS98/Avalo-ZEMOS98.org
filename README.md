@@ -12,7 +12,7 @@ http://avalozemos98.tumblr.com/post/86210828670/lo-que-ha-de-venir-ya-ha-llegado
 ¿De qué está compuesto AVALO.ZEMOS98.org?
 1/ Los archivos html para la web de la campaña. 
 2/ La conexión del Aval digital mancomunado a través de formularios y hojas de cálculo en GoogleDocs
-3/ La documentación de la campaña en un blog
+3/ El seguimiento de la campaña en un blog (concretamente http://avalozemos98.tumblr.com/)
 
 ¿Qué tenemos en este repositorio?
 Solo los archivos del punto 1 y una explicación del punto 2 a continuación
