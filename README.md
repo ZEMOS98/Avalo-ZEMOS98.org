@@ -37,3 +37,7 @@ Pues porque fue la herramienta más accesible cuando lo hicimos y sin tener apen
 por favor cuéntanoslo y lo incluiriamos en este repositorio. 
 
 Cualquier duda técnica escríbenos a info@zemos98.org
+
+DISCLAIMER:
+El diseño de AVALO.ZEMOS98.org está basado en <a href="http://www.notevayasaalemania.com" target="_blank" title="No te vayas a Alemania">notevayasaalemania.com</a> desarrollada por <a href="http://www.wattio.com" target="_blank" title="Wattio">Wattio</a>
+
